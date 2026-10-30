@@ -58,6 +58,8 @@ h3 { margin: 0; font-size: 1.5rem; font-weight: 800; letter-spacing: -0.01em; }
 /* ストアのバッジ：公開前（data-state あり）は薄く・押せない。公開したら data-state を外して href を入れる */
 .stores { margin: 18px 0 0; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 .badge img { height: 48px; width: auto; display: block; }
+/* Google Play のバッジの画像は上下に透明な余白（250px 中 29px ずつ）があるので、見える部分が App Store のバッジと同じ 48px になるよう大きくし、余白ぶんを詰める */
+.badge-play img { height: 62.5px; margin-top: -7.25px; margin-bottom: -7.25px; }
 .app[data-state] .badge img { filter: grayscale(1); opacity: 0.5; }
 .app[data-state] .badge { pointer-events: none; cursor: default; }
 .links { margin: 14px 0 0; font-size: 0.9rem; color: var(--muted); }
