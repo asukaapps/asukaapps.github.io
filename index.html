@@ -1,31 +1,83 @@
 <!doctype html>
-<html lang="ja">
+<html lang="ja" data-theme="b">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Asuka Apps</title>
-<link rel="stylesheet" href="/style.css">
+<meta name="description" content="個人で作っている iOS・Android アプリ。ミーム帳、フォーカスドラゴン。Indie iOS &amp; Android apps.">
+<link rel="icon" href="/assets/favicon_192.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/favicon_192.png">
+<link rel="stylesheet" href="/top.css">
 </head>
 <body>
-<main>
-<header>
-<h1>Asuka Apps</h1>
-<p>個人で作っている iOS アプリ<br>Indie iOS apps</p>
+
+<!-- ヒーロー：Asuka Apps とは何か -->
+<header class="hero">
+<div class="wrap hero-inner">
+<img class="mascot" src="/assets/asukaapps_512.png" alt="" width="184" height="184">
+<div>
+<p class="eyebrow">Asuka Apps</p>
+<h1>個人で作っている<br>iOS・Android アプリ<span class="en">Indie iOS &amp; Android apps</span></h1>
+<p class="lead">工房の小さなドラゴンに見守られながら、自分が使いたいアプリをコツコツ作っています。<span class="en">Handmade apps I actually want to use, built one at a time with a small dragon watching over.</span></p>
+<nav class="hero-links">
+<a class="btn btn-primary" href="#apps">アプリを見る / Apps</a>
+<a class="btn btn-ghost" href="https://x.com/asukaapps" rel="me">X @asukaapps</a>
+</nav>
+</div>
+</div>
 </header>
 
-<h2>アプリ / Apps</h2>
-<ul class="apps">
-<li><span class="app-name">ミーム帳</span><a href="/meme_keyboard/support/">サポート / Support</a> · <a href="/meme_keyboard/privacy/">プライバシーポリシー / Privacy</a></li>
-<li><span class="app-name">フォーカスドラゴン</span><a href="/dragon_focus/support/">サポート / Support</a> · <a href="/dragon_focus/privacy/">プライバシーポリシー / Privacy</a></li>
+<main>
+<!-- アプリの段：1 アプリ 1 カード（アイコン・名前・状態・1 行の説明・対応 OS・ストアのボタン・サポートとプライバシー） -->
+<section id="apps" class="wrap">
+<h2>アプリ <span class="en">Apps</span></h2>
+
+<!-- ミーム帳：iPhone は提出前・Android は審査中 → 近日公開。
+     公開したら：下の 2 つの a に href="<ストアの URL>" を足し、この article の data-state="soon" を外す（バッジの色が戻り、押せるようになる）。状態の札（.status）も消す -->
+<article class="app" data-state="soon">
+<img class="icon" src="/assets/meme_keyboard_512.png" alt="ミーム帳のアイコン" width="116" height="116">
+<div>
+<div class="app-head"><h3>ミーム帳</h3><span class="status">近日公開<span class="en">Coming soon</span></span></div>
+<p class="tagline">ネタ画像を保存して、専用キーボードから X にすぐ貼る。<span class="en">Save meme images and paste them anywhere from a custom keyboard.</span></p>
+<p class="platforms"><span>iPhone</span><span>Android</span></p>
+<div class="stores">
+<a class="badge" aria-disabled="true"><img src="https://toolbox.marketingtools.apple.com/api/badges/download-on-the-app-store/black/ja-jp?size=250x83" alt="App Store（近日公開）" height="48"></a>
+<a class="badge" aria-disabled="true"><img src="https://play.google.com/intl/ja/badges/static/images/badges/ja_badge_web_generic.png" alt="Google Play（近日公開）" height="48"></a>
+</div>
+<p class="links">iPhone 版：<a href="/meme_keyboard/support/">サポート</a> · <a href="/meme_keyboard/privacy/">プライバシーポリシー</a>　Android 版：<a href="/meme_keyboard/android/support/">サポート</a> · <a href="/meme_keyboard/android/privacy/">プライバシーポリシー</a><span class="en">Support &amp; privacy: <a href="/meme_keyboard/support/">iPhone</a> · <a href="/meme_keyboard/android/support/">Android</a></span></p>
+</div>
+</article>
+
+<!-- フォーカスドラゴン：iPhone・製作中。
+     公開したら：a に href="<App Store の URL>" を足し、data-state="dev" を外す。状態の札も消す -->
+<article class="app" data-state="dev">
+<img class="icon" src="/assets/dragon_focus_512.png" alt="フォーカスドラゴンのアイコン" width="116" height="116">
+<div>
+<div class="app-head"><h3>フォーカスドラゴン</h3><span class="status">製作中<span class="en">In development</span></span></div>
+<p class="tagline">集中した時間が、ドラゴンの成長になる。集中タイマー × ドラゴン育成。<span class="en">Your focus time grows your dragon. A focus timer meets dragon raising.</span></p>
+<p class="platforms"><span>iPhone</span></p>
+<div class="stores">
+<a class="badge" aria-disabled="true"><img src="https://toolbox.marketingtools.apple.com/api/badges/download-on-the-app-store/black/ja-jp?size=250x83" alt="App Store（製作中）" height="48"></a>
+</div>
+<p class="links"><a href="/dragon_focus/support/">サポート</a> · <a href="/dragon_focus/privacy/">プライバシーポリシー</a><span class="en"><a href="/dragon_focus/support/">Support</a> · <a href="/dragon_focus/privacy/">Privacy</a></span></p>
+</div>
+</article>
 <!-- APPS -->
-</ul>
+</section>
 
-<h2>お問い合わせ / Contact</h2>
-<p><a href="mailto:asukaapps.contact@gmail.com">asukaapps.contact@gmail.com</a></p>
-
-<h2>お知らせ / News</h2>
-<p>新しいアプリのお知らせは X で。<br>Updates on X: <a href="https://x.com/asukaapps" rel="me">@asukaapps</a></p>
+<!-- お知らせとお問い合わせ -->
+<section class="wrap two">
+<div>
+<h2>お知らせ <span class="en">News</span></h2>
+<p>新しいアプリのお知らせは X で。<span class="en">Updates on X.</span><a href="https://x.com/asukaapps" rel="me">@asukaapps</a></p>
+</div>
+<div>
+<h2>お問い合わせ <span class="en">Contact</span></h2>
+<p>ご質問・不具合のご報告はメールで。<span class="en">Questions and bug reports by email.</span><a href="mailto:asukaapps.contact@gmail.com">asukaapps.contact@gmail.com</a></p>
+</div>
+</section>
 </main>
+
 <footer>© 2026 Asuka Apps</footer>
 </body>
 </html>
