@@ -1,6 +1,6 @@
 /* トップのページ専用の見た目。アプリの下のページ（サポート・プライバシー）は /style.css のまま。
-   色は html[data-theme="b"] の変数で決める（明るい表示・暗い表示の両方）。選ばなかった案（A 藍×金・C 黒の LP）は 2026-10-30 に外した。 */
-:root { color-scheme: light dark; }
+   色は html[data-theme="b"] の変数で決める（暗い表示でも同じ色に固定）。選ばなかった案（A 藍×金・C 黒の LP）は 2026-10-30 に外した。 */
+:root { color-scheme: light; } /* 暗い表示でも生成り×セージのまま（2026-10-30 だいきさん） */
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 body {
@@ -87,11 +87,4 @@ html[data-theme="b"] {
   --hero-bg: #e3d8c4; --hero-text: #2f4a3f; --hero-muted: #5d6f63; --hero-line: rgba(47, 74, 63, 0.4);
   --accent: #7ea98f; --on-accent: #17302a; --accent-soft: #d9e8dd; --accent-ink: #2f5a46;
   --mascot-shadow: 0 10px 24px rgba(47, 74, 63, 0.2); --mascot-border: 5px solid #f8f4ea;
-}
-@media (prefers-color-scheme: dark) {
-  html[data-theme="b"] {
-    --bg: #1b1f1c; --text: #e6e3d9; --muted: #a3a89a; --line: #2f352f; --link: #8fcab0; --card: #242a25;
-    --card-shadow: none; --hero-bg: #242a25; --hero-text: #e6e3d9; --hero-muted: #b5bbae; --hero-line: rgba(230, 227, 217, 0.35);
-    --accent-soft: #2f4a3f; --accent-ink: #bfe0cc; --mascot-border: 5px solid #3a443c;
-  }
 }
