@@ -51,8 +51,6 @@ h3 { margin: 0; font-size: 1.5rem; font-weight: 800; letter-spacing: -0.01em; }
 .app[data-state="soon"] .status { background: var(--accent-soft); color: var(--accent-ink); }
 .app[data-state="dev"] .status { background: transparent; border: 1.5px dashed var(--muted); color: var(--muted); }
 .tagline { margin: 10px 0 0; font-size: 1.03rem; }
-.platforms { margin: 12px 0 0; display: flex; gap: 8px; flex-wrap: wrap; }
-.platforms span { font-size: 0.78rem; color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 2px 9px; }
 /* ストアのバッジ：公開前（data-state あり）は薄く・押せない。公開したら data-state を外して href を入れる */
 .stores { margin: 18px 0 0; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 .badge img { height: 48px; width: auto; display: block; }
