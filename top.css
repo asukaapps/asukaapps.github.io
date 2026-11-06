@@ -93,6 +93,8 @@ h2 { margin: 22px 0 0; font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.2; 
 html.js .duo:not(.is-in) img:nth-child(1) { transform: translateY(60px) rotate(-2deg); opacity: 0; }
 html.js .duo:not(.is-in) img:nth-child(2) { transform: translateY(90px) rotate(2deg); opacity: 0; }
 .duo.is-in img:nth-child(2) { transition-delay: 0.15s; }
+/* フォーカスドラゴンは 2 枚の高さをそろえる（2026-11-06 だいきさん） */
+.spread-dragon .duo img:nth-child(1), .spread-dragon .duo img:nth-child(2) { top: 4%; }
 
 /* ---- お知らせ・お問い合わせ ---- */
 .contact { padding: 110px 0 40px; }
