@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja" data-theme="b">
+<html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,76 +7,129 @@
 <meta name="description" content="個人で作っている iOS・Android アプリ。ミーム帳、フォーカスドラゴン。Indie iOS &amp; Android apps.">
 <link rel="icon" href="/assets/favicon_192.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/favicon_192.png">
-<link rel="stylesheet" href="/top.css?v=20261102a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="stylesheet" href="/top.css?v=20261106a">
 </head>
 <body>
 
+<!-- 上の帯：名前と目次 -->
+<div class="topbar">
+<div class="wrap">
+<a class="brand" href="#top"><img src="/assets/asukaapps_512.png" alt="" width="36" height="36">Asuka Apps</a>
+<nav><a href="#apps">アプリ</a><a href="#contact">お知らせ</a><a href="#contact">お問い合わせ</a></nav>
+</div>
+</div>
+
 <!-- ヒーロー：Asuka Apps とは何か -->
-<header class="hero">
-<div class="wrap hero-inner">
-<img class="mascot" src="/assets/asukaapps_512.png" alt="" width="184" height="184">
-<div>
-<p class="eyebrow">Asuka Apps</p>
-<h1>個人で作っている<br>iOS・Android アプリ<span class="en">Indie iOS &amp; Android apps</span></h1>
+<header class="hero" id="top">
+<div class="wrap">
+<div class="reveal">
+<p class="kicker"><b>ASUKA APPS</b> — INDIE APPS</p>
+<h1>個人で作っている<br><span class="nb"><em>iOS・Android</em></span> <span class="nb">アプリ</span></h1>
+<p class="en">Indie iOS &amp; Android apps</p>
 <nav class="hero-links">
-<a class="btn btn-primary" href="#apps">アプリを見る / Apps</a>
-<a class="btn btn-ghost" href="https://x.com/asukaapps" rel="me">X @asukaapps</a>
+<a class="btn btn-dark" href="#apps">アプリを見る →</a>
+<a class="btn btn-line" href="https://x.com/asukaapps" rel="me">X @asukaapps</a>
 </nav>
+</div>
+<div class="stage reveal" aria-hidden="true">
+<img class="mascot" src="/assets/asukaapps_512.png" alt="" width="320" height="320">
+<img class="sticker sticker-dragon" src="/assets/dragon_focus_512.png" alt="" width="126" height="126">
+<img class="sticker sticker-meme" src="/assets/meme_keyboard_512.png" alt="" width="126" height="126">
 </div>
 </div>
 </header>
 
-<main>
-<!-- アプリの段：1 アプリ 1 カード（アイコン・名前・状態・1 行の説明・対応 OS・ストアのボタン・サポートとプライバシー） -->
-<section id="apps" class="wrap">
-<h2>アプリ <span class="en">Apps</span></h2>
+<!-- 流れる帯（同じ並びを 2 回続けて、切れ目なく回す） -->
+<div class="marquee" aria-hidden="true"><div class="marquee-track">
+<span>ミーム帳<i>✦</i>フォーカスドラゴン<i>✦</i>個人で作っている iOS・Android アプリ<i>✦</i>ASUKA APPS<i>✦</i></span>
+<span>ミーム帳<i>✦</i>フォーカスドラゴン<i>✦</i>個人で作っている iOS・Android アプリ<i>✦</i>ASUKA APPS<i>✦</i></span>
+</div></div>
 
-<!-- ミーム帳：iPhone（2026-11-03）・Android（2026-11-02）とも公開中 → 札なし・両方のボタンを押せる -->
-<article class="app">
-<img class="icon" src="/assets/meme_keyboard_512.png" alt="ミーム帳のアイコン" width="116" height="116">
-<div>
-<div class="app-head"><h3>ミーム帳</h3></div>
-<p class="tagline">ネタ画像を保存して、キーボードからワンタップで貼る。</p>
+<main id="apps">
+<!-- ミーム帳：iPhone（2026-11-03）・Android（2026-11-02）とも公開中 → 札なし・両方のボタンを押せる。画面の絵はストアのスクショ（日本語）を 540px に縮めたもの -->
+<section class="spread spread-meme">
+<div class="wrap">
+<div class="copy reveal">
+<p class="label"><span class="num">01</span>APP</p>
+<img class="app-icon" src="/assets/meme_keyboard_512.png" alt="ミーム帳のアイコン" width="92" height="92">
+<h2>ミーム帳</h2>
+<p class="tagline"><span>ネタ画像を保存して、</span><span>キーボードからワンタップで貼る。</span></p>
 <div class="stores">
-<a class="badge" href="https://apps.apple.com/jp/app/id6825185603"><img src="https://toolbox.marketingtools.apple.com/api/badges/download-on-the-app-store/black/ja-jp?size=250x83" alt="App Store からダウンロード" height="48"></a>
-<a class="badge badge-play" href="https://play.google.com/store/apps/details?id=com.asukaapps.memekeyboard"><img src="https://play.google.com/intl/ja/badges/static/images/badges/ja_badge_web_generic.png" alt="Google Play で手に入れよう" height="48"></a>
+<a class="badge" href="https://apps.apple.com/jp/app/id6825185603"><img src="https://toolbox.marketingtools.apple.com/api/badges/download-on-the-app-store/black/ja-jp?size=250x83" alt="App Store からダウンロード" height="50"></a>
+<a class="badge badge-play" href="https://play.google.com/store/apps/details?id=com.asukaapps.memekeyboard"><img src="https://play.google.com/intl/ja/badges/static/images/badges/ja_badge_web_generic.png" alt="Google Play で手に入れよう" height="50"></a>
 </div>
-<p class="links">iPhone 版：<a href="/meme_keyboard/support/">サポート</a> · <a href="/meme_keyboard/privacy/">プライバシーポリシー</a>　Android 版：<a href="/meme_keyboard/android/support/">サポート</a> · <a href="/meme_keyboard/android/privacy/">プライバシーポリシー</a></p>
+<p class="links"><span>iPhone 版：<a href="/meme_keyboard/support/">サポート</a> · <a href="/meme_keyboard/privacy/">プライバシーポリシー</a></span><br><span>Android 版：<a href="/meme_keyboard/android/support/">サポート</a> · <a href="/meme_keyboard/android/privacy/">プライバシーポリシー</a></span></p>
 </div>
-</article>
+<div class="duo reveal-duo">
+<img src="/assets/meme_keyboard_screen_1.jpg" alt="ミーム帳の画面" loading="lazy" width="540" height="1173">
+<img src="/assets/meme_keyboard_screen_2.jpg" alt="ミーム帳の画面" loading="lazy" width="540" height="1173">
+</div>
+</div>
+</section>
 
-<!-- フォーカスドラゴン：iPhone は審査中・Android は製作中 → 近日公開（2026-11-01 に製作中から変更・Android の札とボタンも足した）。
-     公開したら：下の 2 つの a に href="<ストアの URL>" を足し、data-state="soon" を外す。状態の札も消す。片方だけ先に出すときは、出していない方の a は href なし（押せない）のまま -->
-<article class="app" data-state="soon">
-<img class="icon" src="/assets/dragon_focus_512.png" alt="フォーカスドラゴンのアイコン" width="116" height="116">
-<div>
-<div class="app-head"><h3>フォーカスドラゴン</h3><span class="status">近日公開<span class="en">Coming soon</span></span></div>
-<p class="tagline">集中した時間がドラゴンの成長に！ 集中タイマー × ドラゴン育成。</p>
+<!-- フォーカスドラゴン：iPhone は審査中・Android は製作中 → 近日公開。
+     公開したら：下の 2 つの a に href="<ストアの URL>" を足し、aria-disabled="true" を外す（片方だけ先に出すときは、出していない方はそのまま＝押せない）。
+     両方出したら「近日公開」の札（span class="status"）を消し、サポートとプライバシーポリシーの行のコメントを外す -->
+<section class="spread spread-dragon flip">
+<div class="wrap">
+<div class="copy reveal">
+<p class="label"><span class="num">02</span>APP</p>
+<img class="app-icon" src="/assets/dragon_focus_512.png" alt="フォーカスドラゴンのアイコン" width="92" height="92">
+<h2>フォーカスドラゴン</h2>
+<span class="status">近日公開<span class="en">Coming soon</span></span>
+<p class="tagline"><span>集中した時間がドラゴンの成長に！</span> <span>集中タイマー × ドラゴン育成。</span></p>
 <div class="stores">
-<a class="badge" aria-disabled="true"><img src="https://toolbox.marketingtools.apple.com/api/badges/download-on-the-app-store/black/ja-jp?size=250x83" alt="App Store（近日公開）" height="48"></a>
-<a class="badge badge-play" aria-disabled="true"><img src="https://play.google.com/intl/ja/badges/static/images/badges/ja_badge_web_generic.png" alt="Google Play（製作中）" height="48"></a>
+<a class="badge" aria-disabled="true"><img src="https://toolbox.marketingtools.apple.com/api/badges/download-on-the-app-store/black/ja-jp?size=250x83" alt="App Store（近日公開）" height="50"></a>
+<a class="badge badge-play" aria-disabled="true"><img src="https://play.google.com/intl/ja/badges/static/images/badges/ja_badge_web_generic.png" alt="Google Play（製作中）" height="50"></a>
 </div>
-<!-- 公開するまでは、サポートとプライバシーポリシーへのリンクをトップに出さない（2026-10-30 だいきさん・11/01 の近日公開の間も同じ）。ページ自体（/dragon_focus/support/・/dragon_focus/privacy/）は App Store Connect に登録した URL なのでそのまま。公開したら下の行を戻す
-<p class="links"><a href="/dragon_focus/support/">サポート</a> · <a href="/dragon_focus/privacy/">プライバシーポリシー</a></p>
+<!-- 公開するまでは、サポートとプライバシーポリシーへのリンクをトップに出さない（2026-10-30 だいきさん）。ページ自体（/dragon_focus/support/・/dragon_focus/privacy/・/dragon_focus/android/…）は App Store Connect に登録した URL なのでそのまま。公開したら下の行を戻す
+<p class="links"><span>iPhone 版：<a href="/dragon_focus/support/">サポート</a> · <a href="/dragon_focus/privacy/">プライバシーポリシー</a></span><br><span>Android 版：<a href="/dragon_focus/android/support/">サポート</a> · <a href="/dragon_focus/android/privacy/">プライバシーポリシー</a></span></p>
 -->
 </div>
-</article>
+<div class="duo reveal-duo">
+<img src="/assets/dragon_focus_screen_1.jpg" alt="フォーカスドラゴンの画面" loading="lazy" width="540" height="1173">
+<img src="/assets/dragon_focus_screen_2.jpg" alt="フォーカスドラゴンの画面" loading="lazy" width="540" height="1173">
+</div>
+</div>
+</section>
 <!-- APPS -->
-</section>
-
-<!-- お知らせとお問い合わせ -->
-<section class="wrap two">
-<div>
-<h2>お知らせ <span class="en">News</span></h2>
-<p>新しいアプリのお知らせは X で。<br><a href="https://x.com/asukaapps" rel="me">@asukaapps</a></p>
-</div>
-<div>
-<h2>お問い合わせ <span class="en">Contact</span></h2>
-<p>ご質問・不具合のご報告はメールで。<br><a href="mailto:asukaapps.contact@gmail.com">asukaapps.contact@gmail.com</a></p>
-</div>
-</section>
 </main>
 
-<footer>© 2026 Asuka Apps</footer>
+<!-- お知らせとお問い合わせ：大きな文字の行で -->
+<section class="contact" id="contact">
+<div class="wrap">
+<h2 class="reveal"><span class="num">CONTACT</span>お知らせ・お問い合わせ</h2>
+<div class="rows reveal">
+<a class="row" href="https://x.com/asukaapps" rel="me"><h3>お知らせ</h3><p>新しいアプリのお知らせは X で。<strong>@asukaapps</strong></p><span class="arrow">→</span></a>
+<a class="row" href="mailto:asukaapps.contact@gmail.com"><h3>お問い合わせ</h3><p>ご質問・不具合のご報告はメールで。<strong>asukaapps.contact@gmail.com</strong></p><span class="arrow">→</span></a>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="wrap">
+<a class="brand" href="#top"><img src="/assets/asukaapps_512.png" alt="" width="36" height="36">Asuka Apps</a>
+<span>© 2026 Asuka Apps</span>
+</div>
+</footer>
+
+<script>
+// 画面に入った段をふわっと出す。2 枚の画面（.reveal-duo）は順に起き上がる（動きを減らす設定の人には最初から出しておく）
+(function () {
+  var items = document.querySelectorAll('.reveal, .reveal-duo');
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || reduce) { items.forEach(function (el) { el.classList.add('is-in'); }); return; }
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) { entry.target.classList.add('is-in'); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  items.forEach(function (el) { observer.observe(el); });
+})();
+</script>
 </body>
 </html>
