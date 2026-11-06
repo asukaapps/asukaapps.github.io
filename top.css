@@ -88,14 +88,11 @@ h2 { margin: 22px 0 0; font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.2; 
 /* 傾けた 2 枚の画面（画面に入ると順に起き上がる） */
 .duo { position: relative; aspect-ratio: 1 / 1.05; }
 .duo img { position: absolute; width: 46%; height: auto; border-radius: 24px; border: 6px solid #fff; box-shadow: 0 26px 50px rgba(0, 0, 0, 0.22); transition: transform 1s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 1s ease; }
-.duo img:nth-child(1) { left: 6%; top: 8%; transform: rotate(-8deg); }
-.duo img:nth-child(2) { right: 6%; top: 0; transform: rotate(6deg); }
+.duo img:nth-child(1) { left: 6%; top: 4%; transform: rotate(-8deg); }
+.duo img:nth-child(2) { right: 6%; top: 4%; transform: rotate(6deg); } /* 2 枚の高さはそろえる（2026-11-06 だいきさん） */
 html.js .duo:not(.is-in) img:nth-child(1) { transform: translateY(60px) rotate(-2deg); opacity: 0; }
 html.js .duo:not(.is-in) img:nth-child(2) { transform: translateY(90px) rotate(2deg); opacity: 0; }
 .duo.is-in img:nth-child(2) { transition-delay: 0.15s; }
-/* フォーカスドラゴンは 2 枚の高さをそろえる（2026-11-06 だいきさん） */
-.spread-dragon .duo img:nth-child(1), .spread-dragon .duo img:nth-child(2) { top: 4%; }
-
 /* ---- お知らせ・お問い合わせ ---- */
 .contact { padding: 110px 0 40px; }
 .contact h2 { margin: 0 0 40px; font-size: clamp(1.8rem, 4vw, 2.6rem); }
