@@ -46,7 +46,7 @@ h1 em { font-style: normal; background: linear-gradient(transparent 62%, #ffe27a
 .btn-line { border: 1.5px solid var(--ink); }
 .stage { position: relative; aspect-ratio: 1 / 1; max-width: 420px; justify-self: center; width: 100%; }
 .stage .mascot { position: absolute; inset: 12%; width: 76%; height: 76%; border-radius: 50%; object-fit: cover; background: #e3d8c6; border: 8px solid #fff; box-shadow: 0 24px 50px rgba(29, 38, 33, 0.18); }
-.sticker { position: absolute; width: 30%; border-radius: 24%; border: 6px solid #fff; box-shadow: 0 14px 30px rgba(29, 38, 33, 0.2); animation: bob 6s ease-in-out infinite; }
+.sticker { position: absolute; width: 30%; height: auto; aspect-ratio: 1 / 1; border-radius: 24%; border: 6px solid #fff; box-shadow: 0 14px 30px rgba(29, 38, 33, 0.2); animation: bob 6s ease-in-out infinite; } /* 縦は横に合わせる（img の height="126" のままだと、狭い画面で縦に伸びる） */
 .sticker-meme { left: -2%; bottom: 4%; transform: rotate(-12deg); }
 .sticker-dragon { right: -2%; top: 2%; transform: rotate(10deg); animation-delay: -3s; }
 @keyframes bob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
