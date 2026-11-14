@@ -102,6 +102,21 @@ h2 { margin: 22px 0 0; font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.2; 
 html.js .duo:not(.is-in) img:nth-child(1) { transform: translateY(60px) rotate(-2deg); opacity: 0; }
 html.js .duo:not(.is-in) img:nth-child(2) { transform: translateY(90px) rotate(2deg); opacity: 0; }
 .duo.is-in img:nth-child(2) { transition-delay: 0.15s; }
+/* おりがみ の画面の絵は、生成りの余白の中に端末が入っている（端末はカードの幅の 8 割弱）。カードを 1.22 倍にして、中の端末がほかの 2 つのカードとそろって見えるようにする */
+.spread-origami .duo { aspect-ratio: 1 / 1.27; }
+.spread-origami .duo img { width: 56%; }
+.spread-origami .duo img:nth-child(1) { left: -2%; }
+.spread-origami .duo img:nth-child(2) { right: -2%; }
+@media (max-width: 1180px) { /* 狭い画面：傾けたカードの角が画面の端で切れないよう、少し内側に寄せる */
+  .spread-origami .duo img:nth-child(1) { left: 1%; }
+  .spread-origami .duo img:nth-child(2) { right: 1%; }
+}
+@media (min-width: 481px) and (max-width: 820px) { /* タブレットの縦：1 列になってカードが大きくなるので、ひと回り小さく・内側に */
+  .spread-origami .duo { aspect-ratio: 1 / 1.2; }
+  .spread-origami .duo img { width: 52%; }
+  .spread-origami .duo img:nth-child(1) { left: 4%; }
+  .spread-origami .duo img:nth-child(2) { right: 4%; }
+}
 /* ---- お知らせ・お問い合わせ ---- */
 .contact { padding: 110px 0 40px; }
 .contact h2 { margin: 0 0 40px; font-size: clamp(1.8rem, 4vw, 2.6rem); }
