@@ -1,24 +1,46 @@
-/* 公開ページ共通の見た目（明るい・暗い表示の両方） */
+/* アプリの下のページ（サポート・プライバシーポリシー）共通の見た目。トップのページは /top.css。
+   2026-11-15 に作り直した：暗い表示（ダークモードで黒くなる）をやめて明るい色に固定し、アプリごとの色にした
+   （だいきさん「おりがみ からお問い合わせを開いたら まっくらで びびった」）。それまでの生成り 1 色＋暗い表示は git の履歴にある。
+   - 色は <body class="app-<slug>"> で決まる。下の「アプリごとの色」に段が無い slug は「素の色」（Asuka Apps の生成り×セージ）になる
+   - アプリを足すとき：「アプリごとの色」に .app-<slug> の段を足し、assets/<slug>_192.png（アイコンを 192px に縮めたもの）を置く
+   - 外のフォントは読まない（プライバシーポリシーのページから よそへ通信しないため）。丸い字は端末に入っているものを使う
+   - 直したら、各ページの style.css の読み込みの版の印（?v=）を上げる */
 :root {
-  --bg: #fbfaf7;
-  --text: #22201c;
-  --muted: #6b665d;
-  --line: #e4e0d6;
-  --link: #2f6f5e;
-  --card: #ffffff;
+  color-scheme: light;
+  /* 素の色 */
+  --bg: #fbf8f2; --text: #1d2621; --muted: #66706a; --line: #e6dfd1;
+  --band: #2f4a3f; --band-text: #f6f0e2; --band-sub: rgba(246, 240, 226, 0.8);
+  --link: #2f6f5e; --mark: #2f4a3f; --chip: #ece6d8;
+  --button: #2f4a3f; --button-text: #ffffff;
+  --heading-font: inherit;
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #161513;
-    --text: #ece8df;
-    --muted: #a39d91;
-    --line: #34312b;
-    --link: #7cc4ad;
-    --card: #1f1d1a;
-  }
+
+/* ---- アプリごとの色 ---- */
+/* おりがみ：アプリの生成りの地・4 すみの色紙・紺のボタン・丸い字 */
+.app-origami_3d {
+  --bg: #fdf6e9; --text: #2e241b; --muted: #7a6c5d; --line: #ecdfc9;
+  --band: transparent; --band-text: #2e241b; --band-sub: #7a6c5d;
+  --link: #2a4b8d; --mark: #fb5b38; --chip: #f3e8d4;
+  --button: #2a4b8d; --button-text: #ffffff;
+  --heading-font: ui-rounded, "Hiragino Maru Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
 }
+/* フォーカスドラゴン：森の緑の帯・羊皮紙の地・茶の字 */
+.app-dragon_focus {
+  --bg: #f8f1e1; --text: #33261c; --muted: #7b6a57; --line: #e3d5ba;
+  --band: #27502f; --band-text: #fbf3df; --band-sub: rgba(251, 243, 223, 0.82);
+  --link: #2f6a33; --mark: #6aa53c; --chip: #ece0c6;
+  --button: #27502f; --button-text: #fbf3df;
+}
+/* ミーム帳：黄色の帯・黒い字・本の朱色のリンク */
+.app-meme_keyboard {
+  --bg: #fffdf5; --text: #1d1d1b; --muted: #6a675f; --line: #ece6d2;
+  --band: #ffd52e; --band-text: #1d1d1b; --band-sub: rgba(29, 29, 27, 0.72);
+  --link: #c0351c; --mark: #ffd52e; --chip: #fff1b8;
+  --button: #1d1d1b; --button-text: #ffd52e;
+}
+
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; background: var(--bg); }
 body {
   margin: 0;
   background: var(--bg);
@@ -27,16 +49,61 @@ body {
   line-height: 1.8;
 }
 main, footer { max-width: 720px; margin: 0 auto; padding: 0 20px; }
-main { padding-top: 48px; padding-bottom: 32px; }
-header p, .meta { color: var(--muted); }
-h1 { font-size: 1.7rem; line-height: 1.4; margin: 0 0 4px; }
-h2 { font-size: 1.15rem; margin: 40px 0 8px; padding-top: 16px; border-top: 1px solid var(--line); }
-h3 { font-size: 1rem; margin: 24px 0 4px; }
-a { color: var(--link); }
+main { padding-top: 28px; padding-bottom: 32px; }
+h1 { font-family: var(--heading-font); } /* 丸い字は題字だけ（端末の丸い字には太字が無く、小さい見出しに使うと本文と見分けにくい） */
+a { color: var(--link); text-underline-offset: 2px; }
 ul { padding-left: 1.3em; }
+
+/* ---- 上の帯：アプリのアイコン・名前・ページの種類 ---- */
+.app-head { position: relative; overflow: hidden; padding: 38px 20px 30px; text-align: center; background: var(--band); color: var(--band-text); }
+.app-head > * { position: relative; } /* 帯の飾り（::before）より手前に */
+.app-head .app-icon { display: block; width: 76px; height: 76px; margin: 0 auto 14px; border-radius: 22.5%; border: 4px solid #fff; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18); }
+.app-head h1 { margin: 0; font-size: 1.5rem; line-height: 1.4; }
+.app-head p { margin: 2px 0 0; font-weight: 700; font-size: 0.95rem; color: var(--band-sub); }
+.app-head .meta { margin-top: 6px; font-weight: 400; font-size: 0.8rem; }
+
+/* ---- 本文 ---- */
+h2 { position: relative; font-size: 1.12rem; line-height: 1.5; margin: 36px 0 8px; padding: 18px 0 0 1.45em; border-top: 1px solid var(--line); }
+h2::before { content: ""; position: absolute; left: 0; top: calc(18px + 0.4em); width: 0.72em; height: 0.72em; border-radius: 2px; background: var(--mark); }
+main > h2:first-child { margin-top: 0; border-top: 0; padding-top: 0; }
+main > h2:first-child::before { top: 0.4em; }
+h3 { font-size: 1rem; line-height: 1.6; margin: 24px 0 4px; }
+/* メールのアドレスは押しやすい大きなボタンに（どのページでも 1 行だけの段落に入っている） */
+p > a[href^="mailto:"] { display: inline-block; max-width: 100%; padding: 11px 24px; border-radius: 999px; background: var(--button); color: var(--button-text); font-weight: 700; text-decoration: none; overflow-wrap: anywhere; }
+
+/* ---- 英語の段 ---- */
+.lang { margin-top: 56px; padding-top: 26px; border-top: 3px solid var(--line); }
+.lang[lang="en"]::before { content: "English"; display: inline-block; padding: 1px 13px; border-radius: 999px; background: var(--chip); color: var(--muted); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.08em; }
+.lang > h1 { margin: 12px 0 0; font-size: 1.35rem; line-height: 1.4; }
+.lang > h1 + p { margin: 2px 0 0; font-weight: 700; font-size: 0.95rem; color: var(--muted); }
+.lang > .meta { margin: 4px 0 0; }
+.meta { color: var(--muted); font-size: 0.8rem; }
+
+footer { color: var(--muted); font-size: 0.85rem; padding-top: 24px; padding-bottom: 48px; border-top: 1px solid var(--line); }
+
+/* ---- アプリごとの飾り ---- */
+/* おりがみ：上の 2 すみから色紙がのぞく（トップの見開きと同じ色紙の SVG）。帯の下に 4 色の短い線。見出しの印は色紙の 4 色を順に・少し傾ける */
+.app-origami_3d .app-head { padding-top: 44px; padding-bottom: 18px; }
+.app-origami_3d .app-head::before { content: ""; position: absolute; inset: 0; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cdefs%3E%3Cfilter id='s' x='-30%25' y='-30%25' width='160%25' height='160%25'%3E%3CfeDropShadow dx='0' dy='5' stdDeviation='7' flood-color='%233a2a1e' flood-opacity='.16'/%3E%3C/filter%3E%3C/defs%3E%3Cg transform='translate(0 0) scale(1 1)'%3E%3Crect x='-150' y='-10' width='230' height='230' fill='%23fbc33b' filter='url(%23s)' transform='rotate(-24 0 0)'/%3E%3Crect x='-60' y='-170' width='230' height='230' fill='%232985e5' filter='url(%23s)' transform='rotate(-38 60 0)'/%3E%3C/g%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cdefs%3E%3Cfilter id='s' x='-30%25' y='-30%25' width='160%25' height='160%25'%3E%3CfeDropShadow dx='0' dy='5' stdDeviation='7' flood-color='%233a2a1e' flood-opacity='.16'/%3E%3C/filter%3E%3C/defs%3E%3Cg transform='translate(300 0) scale(-1 1)'%3E%3Crect x='-150' y='-10' width='230' height='230' fill='%23a6d146' filter='url(%23s)' transform='rotate(-24 0 0)'/%3E%3Crect x='-60' y='-170' width='230' height='230' fill='%23fd83ae' filter='url(%23s)' transform='rotate(-38 60 0)'/%3E%3C/g%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: left top, right top; background-size: 108px 108px; }
+@media (min-width: 700px) { .app-origami_3d .app-head::before { background-size: 150px 150px; } }
+.app-origami_3d .app-head::after { content: ""; display: block; width: 96px; height: 6px; margin: 20px auto 0; border-radius: 3px; background: linear-gradient(90deg, #fb5b38 0 25%, #2985e5 25% 50%, #3aa655 50% 75%, #ff831b 75% 100%); }
+.app-origami_3d h2::before { transform: rotate(-8deg); }
+.app-origami_3d h2:nth-of-type(4n + 2)::before { background: #2985e5; }
+.app-origami_3d h2:nth-of-type(4n + 3)::before { background: #3aa655; }
+.app-origami_3d h2:nth-of-type(4n + 4)::before { background: #ff831b; }
+
+/* フォーカスドラゴン：帯の下にドット絵の草（四角が 1 つおきに飛び出す）。見出しの印はドット絵の草のブロック */
+.app-dragon_focus .app-head { padding-bottom: 44px; }
+.app-dragon_focus .app-head::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 14px; background: repeating-linear-gradient(90deg, #7db548 0 8px, transparent 8px 16px) left top / 100% 6px no-repeat, linear-gradient(#7db548, #7db548) left bottom / 100% 8px no-repeat; }
+.app-dragon_focus h2::before { border-radius: 0; box-shadow: inset 3px 3px 0 #a5d667, inset -3px -3px 0 #3f7a2c; }
+
+/* ミーム帳：見出しは黄色の札（線で区切らない） */
+.app-meme_keyboard h2 { width: fit-content; margin-top: 40px; padding: 3px 14px; border-top: 0; border-radius: 8px; background: var(--mark); }
+.app-meme_keyboard h2::before { content: none; }
+.app-meme_keyboard main > h2:first-child { margin-top: 4px; padding: 3px 14px; }
+
+/* トップの雛形（_store/templates/site/index.html）の一覧用。いまのトップは /top.css を使う */
 .apps { list-style: none; padding: 0; }
-.apps li { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin: 10px 0; }
+.apps li { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin: 10px 0; }
 .app-name { font-weight: 600; display: block; }
 .apps li.empty { color: var(--muted); background: transparent; border-style: dashed; }
-.lang { margin-top: 56px; }
-footer { color: var(--muted); font-size: 0.85rem; padding-top: 24px; padding-bottom: 48px; border-top: 1px solid var(--line); }
