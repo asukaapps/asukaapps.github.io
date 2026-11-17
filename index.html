@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Asuka Apps</title>
-<meta name="description" content="個人で作っている iOS・Android アプリ。ミーム帳、フォーカスドラゴン。Indie iOS &amp; Android apps.">
+<meta name="description" content="個人で作っている iOS・Android アプリ。ミーム帳、フォーカスドラゴン、おりがみ。Indie iOS &amp; Android apps.">
 <link rel="icon" href="/assets/favicon_192.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/favicon_192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,14 +39,15 @@
 <img class="mascot" src="/assets/asukaapps_512.png" alt="" width="320" height="320">
 <img class="sticker sticker-dragon" src="/assets/dragon_focus_512.png" alt="" width="126" height="126">
 <img class="sticker sticker-meme" src="/assets/meme_keyboard_512.png" alt="" width="126" height="126">
+<img class="sticker sticker-origami" src="/assets/origami_3d_512.png" alt="" width="126" height="126">
 </div>
 </div>
 </header>
 
 <!-- 流れる帯（同じ並びを 2 回続けて、切れ目なく回す） -->
 <div class="marquee" aria-hidden="true"><div class="marquee-track">
-<span>ミーム帳<i>✦</i>フォーカスドラゴン<i>✦</i>個人で作っている iOS・Android アプリ<i>✦</i>ASUKA APPS<i>✦</i></span>
-<span>ミーム帳<i>✦</i>フォーカスドラゴン<i>✦</i>個人で作っている iOS・Android アプリ<i>✦</i>ASUKA APPS<i>✦</i></span>
+<span>ミーム帳<i>✦</i>フォーカスドラゴン<i>✦</i>おりがみ<i>✦</i>個人で作っている iOS・Android アプリ<i>✦</i>ASUKA APPS<i>✦</i></span>
+<span>ミーム帳<i>✦</i>フォーカスドラゴン<i>✦</i>おりがみ<i>✦</i>個人で作っている iOS・Android アプリ<i>✦</i>ASUKA APPS<i>✦</i></span>
 </div></div>
 
 <main id="apps">
@@ -92,7 +93,27 @@
 </div>
 </section>
 
-<!-- おりがみ の紹介（03 の見開き・上のシール・流れる帯・検索向けの説明文）は 2026-11-16 に一旦外した。戻すときは、この変更のコミットを git revert する。top.css の .spread-origami と assets の絵は残してある -->
+<!-- おりがみ：iPhone・iPad（2026-11-14）公開中・Android はまだ → App Store のボタンだけ（Google Play のボタンと Android 版の行は入れていない）。画面の絵はストアのスクショ（日本語）を 540px に縮めたもの。
+     Android を公開したら：下の .stores に Google Play の a を足す（class="badge badge-play"・href="https://play.google.com/store/apps/details?id=com.asukaapps.origami3d"・中の img は上の 2 つと同じ）・
+     .links に Android 版の行を足す（/origami_3d/android/support/ と /origami_3d/android/privacy/。書き方は上の 2 つと同じ） -->
+<section class="spread spread-origami">
+<div class="wrap">
+<div class="copy reveal">
+<p class="label"><span class="num">03</span>APP</p>
+<img class="app-icon" src="/assets/origami_3d_512.png" alt="おりがみのアイコン" width="92" height="92">
+<h2>おりがみ</h2>
+<p class="tagline"><span>折り紙の折り方を</span><span>3Dで見やすくガイド</span><br><span>おりがみ制作を</span><span>やさしく手助け！</span></p>
+<div class="stores">
+<a class="badge" href="https://apps.apple.com/jp/app/id6834218093"><img src="https://toolbox.marketingtools.apple.com/api/badges/download-on-the-app-store/black/ja-jp?size=250x83" alt="App Store からダウンロード" height="50"></a>
+</div>
+<p class="links"><span>iPhone・iPad 版：</span><wbr><span><a href="/origami_3d/support/">サポート</a> · <a href="/origami_3d/privacy/">プライバシーポリシー</a></span></p>
+</div>
+<div class="duo reveal-duo">
+<img src="/assets/origami_3d_screen_2.jpg" alt="おりがみの作品の一覧" loading="lazy" width="540" height="1173">
+<img src="/assets/origami_3d_screen_1.jpg" alt="おりがみの画面" loading="lazy" width="540" height="1173">
+</div>
+</div>
+</section>
 <!-- APPS -->
 </main>
 
