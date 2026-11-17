@@ -93,8 +93,8 @@
 </div>
 </section>
 
-<!-- おりがみ：iPhone・iPad（2026-11-14）公開中・Android はまだ → App Store のボタンだけ（Google Play のボタンと Android 版の行は入れていない）。画面の絵はストアのスクショ（日本語）を 540px に縮めたもの。
-     Android を公開したら：下の .stores に Google Play の a を足す（class="badge badge-play"・href="https://play.google.com/store/apps/details?id=com.asukaapps.origami3d"・中の img は上の 2 つと同じ）・
+<!-- おりがみ：iPhone・iPad（2026-11-14）公開中・Android はまだ → App Store のボタン ＋ 灰色で押せない Google Play のボタン（2026-11-17 だいきさん「グレーアウトボタンおいて」。Android 版の行は入れていない）。画面の絵はストアのスクショ（日本語）を 540px に縮めたもの。
+     Android を公開したら：下の Google Play の a から aria-disabled="true" を外して href="https://play.google.com/store/apps/details?id=com.asukaapps.origami3d" を足し、alt を「Google Play で手に入れよう」に（上の 2 つと同じ形）・
      .links に Android 版の行を足す（/origami_3d/android/support/ と /origami_3d/android/privacy/。書き方は上の 2 つと同じ） -->
 <section class="spread spread-origami">
 <div class="wrap">
@@ -105,6 +105,7 @@
 <p class="tagline"><span>折り紙の折り方を</span><span>3Dで見やすくガイド</span><br><span>おりがみ制作を</span><span>やさしく手助け！</span></p>
 <div class="stores">
 <a class="badge" href="https://apps.apple.com/jp/app/id6834218093"><img src="https://toolbox.marketingtools.apple.com/api/badges/download-on-the-app-store/black/ja-jp?size=250x83" alt="App Store からダウンロード" height="50"></a>
+<a class="badge badge-play" aria-disabled="true"><img src="https://play.google.com/intl/ja/badges/static/images/badges/ja_badge_web_generic.png" alt="Google Play（近日公開）" height="50"></a>
 </div>
 <p class="links"><span>iPhone・iPad 版：</span><wbr><span><a href="/origami_3d/support/">サポート</a> · <a href="/origami_3d/privacy/">プライバシーポリシー</a></span></p>
 </div>
